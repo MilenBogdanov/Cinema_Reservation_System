@@ -1,0 +1,200 @@
+/* General Body Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #cc0811; /* Darker red background */
+    background-image: url('images/cinemaIndex.jpg'); /* Path to your uploaded cinema.jpg image */
+    backdrop-filter: blur(3px); /* Blur effect for the background */
+}
+
+/* Header Styling */
+.header {
+    position: absolute; /* Positioning to stay on top */
+    top: 20px; /* Adjust based on your preference */
+    left: 20px; /* Adjust based on your preference */
+    z-index: 1000; /* Ensures it stays above other elements */
+}
+
+.logo {
+    width: 150px; /* Smaller logo size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Container for Login Page */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Box for Login Form and Image */
+.login-box {
+    display: flex;
+    width: 1000px; /* Increased width from 850px to 1000px */
+    height: 600px; /* Increased height from 500px to 600px */
+    background-color: #1b1b1b;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Left Side Image Section */
+.login-image {
+    flex: 1;
+    background-image: url('images/new.jpg'); /* Path to your uploaded new.jpg image */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Right Side Content Section */
+.login-content {
+    flex: 1;
+    padding: 60px; /* Increased padding for more spacing */
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center align items */
+    background-color: #1b1b1b;
+}
+
+.login-content h1 {
+    margin-bottom: 20px; /* Adjusted margin for better spacing */
+    font-size: 36px; /* Adjusted font size */
+    color: #ffffff;
+    text-align: center; /* Center align text */
+}
+
+.login-content p {
+    margin-bottom: 40px; /* Increased margin for better spacing */
+    font-size: 18px; /* Slightly larger text size */
+    text-align: center; /* Center align text */
+}
+
+/* Input Fields */
+.login-content input {
+    width: 85%; /* Full width for input fields */
+    padding: 20px; /* Increased padding for bigger inputs */
+    margin-bottom: 25px; /* Increased margin between fields */
+    border: none;
+    border-radius: 8px; /* Slightly more rounded corners */
+    font-size: 18px; /* Larger font size for inputs */
+    background-color: #f0f0f0;
+}
+
+/* Password Input Container */
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%; /* Ensure it takes full width */
+}
+
+.password-input {
+    width: 100%; /* Make input field full width */
+    padding-right: 40px; /* Ensures the icon doesn't overlap the text */
+}
+
+/* Button Styling */
+.login-content button {
+    width: 100%;
+    padding: 20px; /* Increased button size */
+    background-color: #cc0811; /* Darker red background for the button */
+    color: white;
+    border: none;
+    border-radius: 8px; /* Rounded button */
+    font-size: 20px; /* Increased font size for the button text */
+    cursor: pointer;
+}
+
+.login-content button:hover {
+    background-color: #b20710; /* Even darker red on hover */
+}
+
+/* Signup Link */
+.signup-link {
+    margin-top: 25px; /* Adjusted spacing */
+    font-size: 16px; /* Increased font size */
+    color: #ffffff;
+}
+
+.signup-link a {
+    color: #cc0811; /* Darker red link */
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+/* Error Message Popup Styling */
+.error-popup {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background with more opacity */
+}
+
+/* Popup Content */
+.error-popup-content {
+    background-color: #fff; /* White background for better visibility */
+    margin: 15% auto; /* Center it */
+    padding: 20px;
+    border: 1px solid #f44336;
+    width: 90%; /* Responsive width */
+    max-width: 400px; /* Max width */
+    border-radius: 10px; /* Rounded corners */
+    color: #333; /* Dark text color */
+    position: relative; /* Positioning for close button */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    font-family: Arial, sans-serif; /* Font style */
+}
+
+/* Close Button */
+.close-popup {
+    color: #f44336; /* Red color for close button */
+    float: right; /* Right align */
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-popup:hover,
+.close-popup:focus {
+    color: #ccc; /* Change color on hover */
+    text-decoration: none;
+}
+
+/* Forgot Password Link */
+.forgot-password {
+    margin-bottom: 20px; /* Adds some space below the link */
+    text-align: right;   /* Aligns the link to the right */
+    width: 100%;
+}
+
+.forgot-password a {
+    color: #cc0811; /* Darker red link */
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+/* Show/Hide Password Icon */
+.show-hide {
+    cursor: pointer;
+    position: absolute;
+    right: 10px; /* Positioning the icon within the input */
+    top: 50%; /* Centering vertically */
+    transform: translateY(-100%); /* Adjusting for perfect centering */
+    font-size: 20px; /* Adjust the font size as needed */
+}

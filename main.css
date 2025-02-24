@@ -1,0 +1,914 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-image: url('images/mainbackground2.webp'); 
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed; 
+    position: relative; 
+    z-index: 0; 
+}
+
+
+.navbar-container {
+    margin-bottom: 20px;
+}
+
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.7); 
+    display: flex;
+    align-items: center; 
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    position: relative; 
+    z-index: 10; 
+}
+
+
+.navbar .logo {
+    height: 75px; 
+    margin-right: 15px;
+}
+
+
+.navbar-title {
+    font-size: 40px; 
+    color: #e50914;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-right: 20px; 
+    text-shadow: 
+        -1px -1px 0 #fff, 
+        1px -1px 0 #fff,   
+        -1px 1px 0 #fff,   
+        1px 1px 0 #fff;    
+}
+
+.navbar-links {
+    display: flex; 
+    justify-content: center; 
+    flex-grow: 1;
+}
+
+.navbar-links a {
+    color: #f5f5f5;
+    text-decoration: none;
+    margin: 0 20px; 
+    font-weight: bold;
+    font-size: 20px; 
+    transition: color 0.3s;
+    
+}
+
+.navbar-links a:hover {
+    color: #e50914; 
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown a {
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7); 
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); 
+    min-width: 160px;
+    z-index: 1;
+    top: 100%; 
+    left: 0;
+    border-radius: 5px;
+    padding: 10px 0;
+}
+
+.dropdown-menu li {
+    list-style-type: none;
+    margin: 0;
+}
+
+.dropdown-menu li a {
+    color: #f5f5f5;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #333; 
+    color: #e50914; 
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.navbar .logout {
+    margin-left: auto; 
+}
+
+.navbar .logout button {
+    background-color: #e50914;
+    color: white;
+    border: none;
+    padding: 12px 24px; 
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 18px; 
+    transition: background-color 0.3s, transform 0.2s ease-in-out;
+}
+
+.navbar .logout button:hover {
+    background-color: #f83a31; 
+    transform: scale(1.05); 
+}
+
+.slider-container {
+    position: relative;
+    width: 100%; 
+    max-width: 1400px; 
+    margin: 20px auto; 
+    overflow: hidden; 
+    border-radius: 10px; 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out; 
+    width: 100%; 
+    transform: translateX(0); 
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.slide {
+    position: relative; 
+    min-width: 100%; 
+    display: flex; 
+    height: 600px;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.slide::before {
+    display: none;
+}
+
+.slide-info {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #f5f5f5;
+    text-align: center;
+    z-index: 1;
+}
+
+.slide-image {
+    flex: 1;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.slider h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #e50914;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    margin-bottom: 20px;
+}
+
+.slider p {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.genre {
+    font-size: 18px;
+    font-weight: bold;
+    color: #f5f5f5;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+
+.long-description {
+    font-size: 15px; 
+    line-height: 1.5; 
+    margin-bottom: 10px;
+}
+
+/* Tickets Button */
+.tickets-button {
+    background: linear-gradient(135deg, #e50914, #c3071a); /* Gradient background for a modern look */
+    color: white; /* White text */
+    padding: 12px 24px; /* Increased padding for a larger button */
+    border: none; /* Remove border */
+    border-radius: 8px; /* Slightly more rounded corners */
+    font-weight: bold; /* Bold text */
+    font-size: 18px; /* Font size */
+    text-decoration: none; /* Remove underline from link */
+    margin-top: 20px; /* Space above the button */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background 0.3s, transform 0.2s ease-in-out, box-shadow 0.3s; /* Smooth transitions */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.tickets-button:hover {
+    background: linear-gradient(135deg, #f83a31, #b82e36); /* Darker gradient on hover */
+    transform: scale(1.05); /* Slight scaling effect on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover for more emphasis */
+}
+
+/* Navigation Buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Darker on hover */
+    transform: scale(1.1); /* Slight scaling on hover */
+}
+
+.prev {
+    left: 5px;
+}
+
+.next {
+    right: 5px;
+}
+
+/* Contact-specific styles */
+
+.contacts-container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: rgba(44, 44, 44, 0.7); /* Dark grey background with 80% opacity */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    color: #f5f5f5;
+}
+
+.contacts-container h1 {
+    font-size: 2.5rem;
+    color: #e50914;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contacts-container p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Individual city contact sections */
+.contact-city {
+    background-color: rgba(30, 30, 30, 0.9); /* Dark grey background with 90% opacity */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-city h2 {
+    font-size: 1.8rem;
+    color: #e50914;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.contact-city p {
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin: 5px 0;
+    text-align: center;
+}
+
+.contact-city strong {
+    color: #f5f5f5;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Gallery Page Styles */
+
+.gallery-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: rgba(44, 44, 44, 0.8); /* Dark grey background with 80% opacity */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adds depth with shadow */
+    color: #f5f5f5;
+    text-align: center;
+}
+
+.gallery-container h1 {
+    font-size: 2.5rem;
+    color: #e50914; /* Netflix-like red for the title */
+    margin-bottom: 20px;
+}
+
+.gallery-description {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #f5f5f5;
+    line-height: 1.6; /* Improved readability */
+}
+
+.gallery-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.gallery-item {
+    flex: 1;
+    max-width: 300px; /* Maximum width for each image */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for the images */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px; /* Rounded corners for the image */
+}
+
+.pros-box {
+    background-color: rgba(186, 0, 33, 0.5); /* Dark red background with 80% opacity */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    padding: 20px; /* Padding around the content */
+    margin: 20px auto; /* Center the box */
+    max-width: 600px; /* Set a max-width */
+    color: #f5f5f5; /* Light text color */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.pros-box:hover {
+    transform: scale(1.02); /* Scale up slightly on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Deeper shadow on hover */
+}
+
+.pros-box h2 {
+    color: white; /* Red title */
+    text-align: center; /* Center the title */
+    margin-bottom: 15px; /* Space below title */
+}
+
+.pros-box p {
+    text-align: left; /* Align text left */
+    margin: 10px 0; /* Space between paragraphs */
+    position: relative; /* Position for icon */
+    padding-left: 30px; /* Space for icon */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.pros-box p:hover {
+    background-color: darkgrey; /* Light red background on hover */
+    border-radius: 5px; /* Rounded corners on hover */
+}
+
+.icon {
+    position: absolute; /* Position icon */
+    left: 10px; /* Space from the left */
+    top: 0; /* Align at the top */
+    color: white; /* Red icon color */
+    font-weight: bold; /* Bold icon */
+}
+
+/* Films Section Styles */
+.films-section {
+    padding: 50px;
+    text-align: center;
+    margin-top: 50px;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with 50% opacity */
+    border-radius: 10px; /* Optional: add rounded corners */
+}
+
+.films-title {
+    color: #e50914;
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px; /* Reduced margin to minimize space */
+}
+
+.cinema-thumbnail-gallery {
+    display: flex; /* Use flex to create a horizontal layout */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    gap: 20px; /* Add spacing between items */
+    padding: 10px 0; /* Padding for some space around the items */
+    scroll-behavior: smooth; /* Smooth scrolling effect */
+    scrollbar-width: thin; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+    justify-content: center; /* Center align the thumbnails */
+}
+
+.cinema-thumbnail-gallery::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in WebKit browsers */
+}
+
+.cinema-thumbnail-item {
+    width: 200px; /* Fixed width to standardize all thumbnails */
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.cinema-thumbnail-item:hover {
+    transform: scale(1.05); /* Hover effect to make the thumbnail zoom slightly */
+}
+
+.thumbnail-image {
+    width: 100%;
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px; /* Rounded corners for a more modern look */
+    margin-bottom: 10px;
+}
+
+.cinema-thumbnail-title {
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+/* Coming Soon Section Styles */
+.coming-soon-section {
+    padding: 50px;
+    text-align: center;
+    margin-top: 50px;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with 50% opacity */
+    border-radius: 10px; /* Optional: add rounded corners */
+}
+
+.coming-soon-section .cinema-thumbnail-gallery {
+    display: flex; /* Use flex to create a horizontal layout */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    gap: 20px; /* Add spacing between items */
+    padding: 10px 0; /* Padding for some space around the items */
+    scroll-behavior: smooth; /* Smooth scrolling effect */
+    scrollbar-width: thin; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+    justify-content: center; /* Center align the thumbnails */
+}
+
+.coming-soon-section .cinema-thumbnail-gallery::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in WebKit browsers */
+}
+
+.coming-soon-section .cinema-thumbnail-item {
+    width: 200px; /* Fixed width to standardize all thumbnails */
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.coming-soon-section .cinema-thumbnail-item:hover {
+    transform: scale(1.05); /* Hover effect to make the thumbnail zoom slightly */
+}
+
+.coming-soon-section .thumbnail-image {
+    width: 100%;
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px; /* Rounded corners for a more modern look */
+    margin-bottom: 10px;
+}
+
+.coming-soon-section .cinema-thumbnail-title {
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+.coming-soon-section .films-title {
+    color: #e50914;
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px; /* Reduced margin to minimize space */
+}
+
+.coming-soon-section .cinema-thumbnail-gallery {
+    display: flex; /* Use flex to create a horizontal layout */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    gap: 20px; /* Add spacing between items */
+    padding: 10px 0; /* Padding for some space around the items */
+    scroll-behavior: smooth; /* Smooth scrolling effect */
+    scrollbar-width: thin; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+    justify-content: center; /* Center align the thumbnails */
+}
+
+.coming-soon-section .cinema-thumbnail-gallery::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in WebKit browsers */
+}
+
+.coming-soon-section .cinema-thumbnail-item {
+    width: 200px; /* Fixed width to standardize all thumbnails */
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.coming-soon-section .cinema-thumbnail-item:hover {
+    transform: scale(1.05); /* Hover effect to make the thumbnail zoom slightly */
+}
+
+.coming-soon-section .thumbnail-image {
+    width: 100%;
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px; /* Rounded corners for a more modern look */
+    margin-bottom: 10px;
+}
+
+.coming-soon-section .cinema-thumbnail-title {
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+/* Best Sellers enhanced styling with default rotation */
+.best-sellers-text {
+    position: absolute;
+    top: 30px; /* Adjust to position it */
+    left: 11%; /* Adjusted horizontal position */
+    transform: translateX(-50%) rotate(0deg); /* No rotation */
+    font-size: 1.5rem; /* Reduced font size */
+    color: white; /* White text color */
+    background-color: #e50914; /* Solid red background */
+    padding: 5px 15px; /* Reduced padding for smaller text */
+    border: 2px solid white; /* Slightly thinner border */
+    border-radius: 5px; /* Slightly rounded corners */
+    font-family: 'Arial', sans-serif; /* Simple, readable font */
+    text-align: center; /* Centered text */
+    z-index: 10; /* Ensure it stays on top */
+    text-transform: uppercase; /* All caps text */
+    letter-spacing: 1px; /* Slightly reduced letter spacing */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Soft shadow to make it pop */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition on hover */
+    width: 25%; /* Reduced width */
+}
+
+/* Add hover effect for size increase */
+.best-sellers-text:hover {
+    transform: translateX(-50%) scale(1.1) rotate(0deg); /* Keep rotation and add scale on hover */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5); /* Deeper shadow on hover */
+}
+
+
+/* Ensure the slide-info is relatively positioned to contain the Best Sellers text */
+.slide-info {
+    position: relative;
+    padding: 20px;
+}
+
+.footer {
+    background-color: rgba(0, 0, 0, 0.7); /* Black with 70% opacity */
+    color: white; /* Text color */
+    padding: 20px; /* Add some padding */
+    text-align: center; /* Center align text */
+}
+
+/* Styling for the weekly program section */
+.program-section {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(26, 26, 26, 0.5); /* Dark background with 0.5 opacity */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.program-section h2 {
+    text-align: center;
+    font-size: 2.5rem; /* Increased font size */
+    margin-bottom: 20px;
+    color: #ffffff; /* White text for readability */
+    font-weight: bold;
+}
+
+/* Styling for each day block */
+.day-block {
+    margin-bottom: 40px;
+}
+
+.day-title {
+    font-size: 1.8rem;
+    color: #ff3333; /* Red title to match the red accents on the site */
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Styling for movie rows */
+.movie-row {
+    display: flex;
+    justify-content: space-between; /* Ensures even spacing between movies */
+    margin-bottom: 20px; /* Space between rows of movies */
+}
+
+/* Styling for individual movie blocks */
+.movie-block {
+    flex: 0 1 48%; /* Allows two blocks to fit side by side */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Adjusts alignment */
+    background-color: rgba(42, 42, 42, 0.5); /* Slightly lighter dark background with 0.5 opacity */
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.movie-block:hover {
+    transform: translateY(-5px);
+    background-color: rgba(51, 51, 51, 0.5); /* Hover effect with darker background and 0.5 opacity */
+}
+
+/* Styling for the movie posters */
+.movie-poster {
+    width: 100px; /* Adjust size as needed */
+    height: auto;
+    border-radius: 5px;
+    margin-right: 15px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Styling for movie details */
+.movie-details {
+    flex-grow: 1;
+}
+
+.movie-details h3 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    color: #ffffff; /* White text for movie title */
+    font-weight: bold;
+}
+
+.show-time {
+    font-size: 1.2rem;
+    color: #cccccc; /* Light gray for the show time */
+    font-style: italic;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+}
+
+.modal-content {
+    display: flex; /* Use flexbox for layout */
+    margin: 10% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    max-width: 800px; /* Set a maximum width */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background for content */
+    color: white; /* Set text color to white */
+}
+
+.modal-image {
+    flex: 1; /* Allow the image to take up space */
+    height: auto; /* Adjust height automatically */
+    background-size: contain; /* Show the full image */
+    background-repeat: no-repeat; /* Avoid repeating the image */
+    background-position: center; /* Center the image */
+}
+
+.modal-info {
+    flex: 1; /* Allow the info to take up space */
+    padding: 20px; /* Add padding for spacing */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red; /* Change color to red on hover */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.ticketspop-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff0000; /* Red background */
+    color: white; /* White text */
+    text-decoration: none;
+    border-radius: 5px; /* Rounded corners */
+    margin-top: 20px; /* Increased space above the button */
+}
+
+
+/* Coming Soon Modal Styles */
+#comingSoonModal {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.7); /* Darker semi-transparent background */
+}
+
+#comingSoonModal .modal-content {
+    display: flex; /* Use flexbox for layout */
+    margin: 10% auto; /* Center the modal vertically and horizontally */
+    padding: 20px; /* Standard padding */
+    border: 1px solid #888;
+    width: 80%; /* Modal takes 80% of the width */
+    max-width: 800px; /* Set a maximum width */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background for content */
+    color: white; /* Set text color to white */
+}
+
+#comingSoonModal .modal-image {
+    flex: 1; /* Allow the image to take up space */
+    height: auto; /* Adjust height automatically */
+    background-size: contain; /* Show the full image */
+    background-repeat: no-repeat; /* Avoid repeating the image */
+    background-position: center; /* Center the image */
+    max-height: 400px; /* Set a max height to control size */
+}
+
+#comingSoonModal .modal-info {
+    flex: 1; /* Allow the info to take up space */
+    padding: 20px; /* Add padding for spacing */
+}
+
+#comingSoonModal .close {
+    color: #aaa; /* Default close button color */
+    float: right; /* Align close button to the right */
+    font-size: 28px; /* Font size */
+    font-weight: bold; /* Bold text */
+}
+
+#comingSoonModal .close:hover,
+#comingSoonModal .close:focus {
+    color: red; /* Change color to red on hover */
+    text-decoration: none; /* No underline */
+    cursor: pointer; /* Pointer cursor */
+}
+
+.buy-tickets-button {
+     display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff0000; /* Button color */
+    color: white; /* Text color */
+    text-align: center;
+    text-decoration: none; /* No underline */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth background change */
+    margin-top: 10px; /* Add margin to move the button lower */
+}
+
+.buy-tickets-button:hover {
+    background-color: darkred; /* Darker shade on hover */
+}
+
+
+.admin-button {
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.admin-button:hover {
+    color: red;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    /* Slider Styles */
+    .slider-container {
+        height: 400px; /* Adjusted height for smaller screens */
+    }
+
+    .slide {
+        height: 400px; /* Ensures consistency with slider-container */
+    }
+
+    .slide-info {
+        padding: 15px; /* Slightly reduced padding for better spacing */
+        font-size: 14px; /* Smaller font for mobile screens */
+    }
+
+    .slide-info h2 {
+        font-size: 20px; /* Adjusted for smaller headers on mobile */
+    }
+
+    .slide-info p {
+        font-size: 12px; /* More legible for smaller screens */
+    }
+
+    .prev, .next {
+        font-size: 20px; /* Further reduced button font size for better proportions */
+    }
+
+    .tickets-button {
+        font-size: 14px; /* Smaller font for the button */
+        padding: 10px 20px; /* Balanced padding for better touch targets */
+    }
+
+    /* Gallery Styles */
+    .gallery-grid {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center-align items */
+    }
+
+    .gallery-item {
+        max-width: 100%; /* Full width for gallery items */
+    }
+
+    /* Movie Row Styles */
+    .movie-row {
+        flex-direction: column; /* Stack movies on smaller screens */
+    }
+
+    .movie-block {
+        flex: 1 1 100%; /* Full width on mobile */
+        margin-bottom: 15px; /* Space between stacked movies */
+    }
+
+    .movie-poster {
+        margin-bottom: 10px;
+        width: 100%; /* Full width for posters on mobile */
+    }
+
+    .day-title {
+        font-size: 1.6rem; /* Adjusted font size for day titles */
+    }
+
+    .movie-details h3 {
+        font-size: 1.3rem; /* Adjusted font size for movie titles */
+    }
+}
