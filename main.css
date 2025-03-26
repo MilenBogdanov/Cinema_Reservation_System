@@ -16,6 +16,8 @@ body {
 
 
 .navbar-container {
+    position: relative; /* Ensure navbar is positioned in the normal flow */
+    z-index: 20; /* Make navbar appear above the search container */
     margin-bottom: 20px;
 }
 
@@ -911,4 +913,199 @@ body {
     .movie-details h3 {
         font-size: 1.3rem; /* Adjusted font size for movie titles */
     }
+}
+
+
+
+/* Define the slide-in animation */
+@keyframes slideIn {
+    0% {
+        transform: translateY(-100%); /* Start off-screen, above */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); /* End at its normal position */
+        opacity: 1;
+    }
+}
+
+/* Define the slide-in animation */
+@keyframes slideIn {
+    0% {
+        transform: translateY(-100%); /* Start off-screen, above */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); /* End at its normal position */
+        opacity: 1;
+    }
+}
+
+/* Styling for the search container */
+.search-container {
+    width: 100%; /* Full width */
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+    color: white; /* White text */
+    border-radius: 0; /* No rounded corners */
+    box-shadow: none; /* Remove shadow */
+    position: relative; /* Allow it to scroll with the page */
+    top: 0; /* No need to set top, it's relative now */
+    left: 0;
+    z-index: 10; /* Ensure the search bar is below the navbar */
+    display: flex;
+    justify-content: center; /* Center the search form horizontally */
+    align-items: center;
+    padding-top: 10px; /* Add some spacing to the top */
+    margin-top: -30px; /* Adjust this value to move the search container higher */
+    
+    animation: slideIn 1s ease-out; /* Apply the slide-in animation */
+}
+
+/* Title styling */
+.search-container h2 {
+    font-family: 'Arial', sans-serif;
+    color: #fff; /* Make the title text white */
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+/* Form styling */
+.search-container form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 900px; /* Optional: Limit the max width of the search form */
+}
+
+/* Text input styling */
+.search-container input[type="text"] {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    flex: 1;
+    transition: border-color 0.3s ease;
+}
+
+/* Focused input styling */
+.search-container input[type="text"]:focus {
+    border-color: #007bff;
+}
+
+/* Button styling */
+.search-container button {
+    padding: 12px 20px;
+    background-color: red;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.search-container button:hover {
+    background-color: #f83a31;
+    transform: scale(1.05);
+}
+
+/* Placeholder styling */
+.search-container input[type="text"]::placeholder {
+    color: #ccc; /* Placeholder text color */
+}
+
+.coming-soon-text {
+            color: red;
+            font-weight: bold;
+}
+
+/* Suggestions container */
+.suggestions-container {
+    position: absolute;
+    top: 100%;
+    left: 670px;
+    width: 28%; /* Make the suggestion container match the width of the input */
+    background-color: black; /* Black background */
+     margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 5px; /* Match the search bar's border radius */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    max-height: 150px; /* Reduced max height to make it more compact */
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column; /* Stack the items vertically */
+    align-items: center; /* Center the items horizontally */
+    justify-content: center; /* Center the items vertically */
+}
+
+/* Individual suggestion item */
+.suggestion-item {
+    padding: 8px 12px; /* Adjust padding to make it smaller */
+    font-size: 14px; /* Smaller font size */
+    cursor: pointer;
+    color: white; /* White text for suggestions */
+    width: 100%; /* Make the suggestion item take full width */
+    text-align: center; /* Center the text inside each item */
+    border: none; /* Remove the border */
+}
+
+/* Hover effect for suggestion items */
+.suggestion-item:hover {
+    background-color: grey; /* Grey background on hover */
+}
+
+.films-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.films-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.sort-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+
+#sort-options {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 2px solid white;
+    border-radius: 6px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#sort-options:hover {
+    filter: brightness(0.8);
+}
+
+#clear-filters {
+    padding: 6px 12px;
+    font-size: 14px;
+    border: none;
+    background-color: #ff0000;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#clear-filters:hover {
+    background-color: #cc0000;
 }

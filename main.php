@@ -62,11 +62,27 @@ if ($conn->connect_error) {
     </div>
 </div>
 
+<div class="search-container">
+    <form action="search.php" method="GET">
+        <h2>Search For The Perfect Movie:</h2>
+        <input type="text" name="query" id="searchInput" placeholder="Search for a movie..." required oninput="getSuggestions()">
+        <button type="submit">Search</button>
+    </form>
+    <div id="suggestions" class="suggestions-container"></div> <!-- Suggestions container -->
+</div>
+
 <div class="slider-container">
     <div class="slider">
         <?php
         
-        $bestSellersQuery = "SELECT title, image_url, genre, duration, description FROM now_playing WHERE title IN ('Joker', 'Spider-Man: Homecoming', 'Terrifier 3')";
+        $bestSellersQuery = "
+    SELECT np.title, np.image_url, np.genre, np.duration, np.description
+    FROM now_playing np
+    JOIN seats s ON np.title = s.movie
+    GROUP BY np.title, np.image_url, np.genre, np.duration, np.description
+    ORDER BY COUNT(s.id) DESC
+    LIMIT 3
+";
         $bestSellersResult = $conn->query($bestSellersQuery);
 
         if ($bestSellersResult->num_rows > 0) {
@@ -80,7 +96,7 @@ if ($conn->connect_error) {
                 echo '<a href="tickets.php" class="tickets-button">Buy Tickets</a>';
                 echo '</div>';
                 echo '<div class="slide-image" style="background-image: url(\'' . $row['image_url'] . '\');"></div>';
-                echo '<div class="best-sellers-text">Our Best Sellers</div>';
+                echo '<div class="best-sellers-text">Top 3 Best Sellers</div>';
                 echo '</div>';
             }
         } else {
@@ -195,6 +211,78 @@ window.addEventListener('click', function(event) {
     }
 });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    let searchInput = document.getElementById("searchInput");
+    let suggestionsBox = document.getElementById("suggestions");
+    let selectedIndex = -1;
 
+    searchInput.addEventListener("input", getSuggestions);
+
+    searchInput.addEventListener("keydown", function (event) {
+        let suggestionItems = document.querySelectorAll(".suggestion-item");
+
+        if (event.key === "ArrowDown") {
+            event.preventDefault();
+            selectedIndex = (selectedIndex + 1) % suggestionItems.length;
+            updateSelection(suggestionItems);
+        } else if (event.key === "ArrowUp") {
+            event.preventDefault();
+            selectedIndex = (selectedIndex - 1 + suggestionItems.length) % suggestionItems.length;
+            updateSelection(suggestionItems);
+        } else if (event.key === "Enter") {
+            event.preventDefault();
+            if (selectedIndex >= 0 && suggestionItems.length > 0) {
+                selectSuggestion(suggestionItems[selectedIndex].textContent);
+            } else {
+                document.querySelector(".search-container form").submit(); // Submit if no selection
+            }
+        }
+    });
+
+    function getSuggestions() {
+        let query = searchInput.value.trim();
+        if (query.length < 2) {
+            suggestionsBox.innerHTML = "";
+            return;
+        }
+
+        let xhr = new XMLHttpRequest();
+        xhr.open("GET", "get_suggestions.php?query=" + encodeURIComponent(query), true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                let suggestions = JSON.parse(xhr.responseText);
+                displaySuggestions(suggestions);
+            }
+        };
+        xhr.send();
+    }
+
+    function displaySuggestions(suggestions) {
+        let suggestionsList = "";
+        selectedIndex = -1; // Reset selection
+        if (suggestions.length > 0) {
+            suggestions.forEach(function (item) {
+                suggestionsList += `<div class="suggestion-item" onclick="selectSuggestion('${item.title}')">${item.title} (${item.genre})</div>`;
+            });
+        } else {
+            suggestionsList = '<div class="suggestion-item">No suggestions found</div>';
+        }
+        suggestionsBox.innerHTML = suggestionsList;
+    }
+
+    function updateSelection(items) {
+        items.forEach((item, index) => {
+            item.classList.toggle("selected", index === selectedIndex);
+        });
+    }
+});
+
+function selectSuggestion(title) {
+    document.getElementById("searchInput").value = title;
+    document.getElementById("suggestions").innerHTML = ""; // Clear suggestions
+    document.querySelector(".search-container form").submit(); // Submit the form
+}
+</script>
 </body>
 </html>
