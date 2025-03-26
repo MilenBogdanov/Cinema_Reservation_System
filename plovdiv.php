@@ -107,7 +107,7 @@ $conn->close();
 </div>
 
 <footer class="footer">
-    <p>© 2024 Cinema-Island. All rights reserved.</p>
+    <p>© 2025 Cinema-Island. All rights reserved.</p>
 </footer>
 </body>
 </html>
