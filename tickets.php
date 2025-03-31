@@ -5,7 +5,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     header('Location: index.php');
     exit;
 }
-
+ 
 if (isset($_POST['logout'])) {
     session_unset();
     session_destroy();
@@ -17,7 +17,7 @@ $host = 'localhost';
 $dbUser = 'root'; 
 $dbPass = ''; 
 $dbName = 'registration';
-
+ 
 $conn = new mysqli($host, $dbUser, $dbPass, $dbName);
  
 if ($conn->connect_error) {
@@ -134,7 +134,7 @@ $weeklyPrograms = [
         ],
     ]
 ];
-
+ 
 $movies = [
     'Joker: Folie à Deux' => 12.00,
     'Spider-Man: Homecoming' => 10.00,
@@ -278,7 +278,7 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
         $stmt->close();
     }
 }
-
+ 
 if (isset($purchaseMessage)) {
     // The HTML for the popup message
     $purchaseConfirmation = "
@@ -331,7 +331,7 @@ if (isset($purchaseMessage)) {
                 '>Close</button>
             </div>
         </div>
-        
+ 
         <script>
             // Function to close the popup
             function closePopup() {
@@ -339,11 +339,11 @@ if (isset($purchaseMessage)) {
             }
         </script>
     ";
-
+ 
     // Display the popup confirmation message
     echo $purchaseConfirmation;
 }
-
+ 
 ?>
  
 <!DOCTYPE html>
@@ -451,11 +451,102 @@ if (isset($purchaseMessage)) {
     <input type="hidden" name="seats" id="selectedSeats" value="<?= isset($seats) ? implode(',', $seats) : '' ?>">
 </div>
  
-            <!-- Summary and submit -->
-            <div class="summary">
-                <h3>Summary</h3><br>
-                <p>Total Price: $<span id="totalPrice"><?= number_format($totalPrice, 2) ?></span></p>
-                <button type="submit">Book Tickets</button>
+            <div class="summary" style="text-align: center;">
+    <p>Total Price: $<span id="totalPrice"><?= number_format($totalPrice, 2) ?></span></p><br>
+                <!-- Добавяме формуляр за плащане с кредитна карта -->
+<form id="paymentForm">
+    <div class="payment-section" style="background: black; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); max-width: 400px; margin: auto;">
+        <h3 style="text-align: center; color: red;">Please Enter Your Credit Card Details:</h3><br>
+        <div class="form-group" style="margin-bottom: 15px;">
+            <label for="cardName" style="display: block; font-weight: bold;">Cardholder Name:</label>
+            <input type="text" id="cardName" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+        </div>
+        <div class="form-group" style="margin-bottom: 15px;">
+            <label for="cardNumber" style="display: block; font-weight: bold;">Card Number:</label>
+            <input type="text" id="cardNumber" pattern="\d{16}" maxlength="16" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+        </div>
+        <div class="form-group" style="margin-bottom: 15px; display: flex; justify-content: space-between;">
+            <div style="width: 48%;">
+                <label for="expiryDate" style="display: block; font-weight: bold;">Expiry Date:</label>
+                <input type="month" id="expiryDate" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+            </div>
+            <div style="width: 48%;">
+                <label for="cvv" style="display: block; font-weight: bold;">CVV:</label>
+                <input type="text" id="cvv" pattern="\d{3}" maxlength="3" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+            </div>
+        </div>
+    </div>
+
+    <!-- Submit button inside the form -->
+    <button type="submit" id="bookTicketsBtn" style="width: 100%; padding: 12px; background-color: red; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; margin-top: 15px;">
+        Book Tickets
+    </button>
+</form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const today = new Date();
+        const year = today.getFullYear();
+        let month = today.getMonth() + 1;
+        month = month < 10 ? `0${month}` : month; // Ensure two-digit month format
+
+        const expiryInput = document.getElementById('expiryDate');
+        expiryInput.setAttribute('min', `${year}-${month}`);
+
+        // Prevent users from selecting an expired date
+        expiryInput.addEventListener('input', function () {
+            const [selectedYear, selectedMonth] = expiryInput.value.split('-').map(Number);
+            if (selectedYear < year || (selectedYear === year && selectedMonth < month)) {
+                alert('You cannot select an expired date.');
+                expiryInput.value = `${year}-${month}`; // Reset to the minimum allowed date
+            }
+        });
+    });
+
+    function validatePaymentForm() {
+        const cardName = document.getElementById('cardName').value.trim();
+        const cardNumber = document.getElementById('cardNumber').value.trim();
+        const expiryDate = document.getElementById('expiryDate').value;
+        const cvv = document.getElementById('cvv').value.trim();
+        const bookTicketsBtn = document.getElementById('bookTicketsBtn');
+
+        // Get current year and month
+        const today = new Date();
+        const currentYear = today.getFullYear();
+        const currentMonth = today.getMonth() + 1;
+        const [year, month] = expiryDate ? expiryDate.split('-').map(Number) : [0, 0];
+
+        // Ensure expiry date is not in the past
+        const isExpiryValid = year > currentYear || (year === currentYear && month >= currentMonth);
+
+        const isValid = cardName !== '' &&
+                        /^\d{16}$/.test(cardNumber) &&
+                        expiryDate !== '' && isExpiryValid &&
+                        /^\d{3}$/.test(cvv);
+
+        // Change button color based on validation
+        if (isValid) {
+            bookTicketsBtn.disabled = false;
+            bookTicketsBtn.style.backgroundColor = '#28a745'; // Green when valid
+        } else {
+            bookTicketsBtn.disabled = true;
+            bookTicketsBtn.style.backgroundColor = 'red'; // Red when invalid
+        }
+
+        return isValid;
+    }
+
+    document.querySelectorAll('.payment-section input').forEach(input => {
+        input.addEventListener('input', validatePaymentForm);
+    });
+
+    document.getElementById('paymentForm').addEventListener('submit', function(event) {
+        if (!validatePaymentForm()) {
+            event.preventDefault(); // Prevent form submission
+            alert('Please fill in all payment details before booking tickets.');
+        }
+    });
+</script>
             </div>
         </form>
     </div>
@@ -598,7 +689,7 @@ function calculateTotalPrice() {
             const selectedMovie = movieSelect.value;
             const ticketCount = parseInt(ticketsInput.value) || 1;
  
-            
+ 
             const pricePerTicket = moviePrices[selectedMovie] || 0;
             const totalPrice = pricePerTicket * ticketCount;
  
@@ -624,7 +715,7 @@ function calculateTotalPrice() {
     });
 </script>
 </body>
-<!-- Footer -->
+ 
 <footer class="footer">
     <p>© 2025 Cinema-Island. All rights reserved.</p>
 </footer>

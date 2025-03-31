@@ -848,70 +848,147 @@ body {
     color: red;
 }
 
-/* Responsive Design for Smaller Screens */
-@media (max-width: 768px) {
-    /* Slider Styles */
+/* Медийни заявки за таблети (до 1024px ширина) */
+@media (max-width: 1024px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .navbar-title {
+        font-size: 30px;
+        margin: 10px 0;
+    }
+
+    .navbar-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .navbar-links a {
+        font-size: 18px;
+        margin: 5px;
+    }
+
     .slider-container {
-        height: 400px; /* Adjusted height for smaller screens */
+        max-width: 100%;
+        height: auto;
     }
 
     .slide {
-        height: 400px; /* Ensures consistency with slider-container */
+        flex-direction: column;
+        height: auto;
     }
 
     .slide-info {
-        padding: 15px; /* Slightly reduced padding for better spacing */
-        font-size: 14px; /* Smaller font for mobile screens */
-    }
-
-    .slide-info h2 {
-        font-size: 20px; /* Adjusted for smaller headers on mobile */
-    }
-
-    .slide-info p {
-        font-size: 12px; /* More legible for smaller screens */
-    }
-
-    .prev, .next {
-        font-size: 20px; /* Further reduced button font size for better proportions */
+        padding: 15px;
     }
 
     .tickets-button {
-        font-size: 14px; /* Smaller font for the button */
-        padding: 10px 20px; /* Balanced padding for better touch targets */
+        width: 90%;
+        max-width: 250px;
+    }
+}
+
+/* Медийни заявки за мобилни устройства (до 768px ширина) */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
     }
 
-    /* Gallery Styles */
-    .gallery-grid {
-        flex-direction: column; /* Stack items vertically */
-        align-items: center; /* Center-align items */
+    .navbar .logo {
+        height: 60px;
     }
 
-    .gallery-item {
-        max-width: 100%; /* Full width for gallery items */
+    .navbar-title {
+        font-size: 24px;
     }
 
-    /* Movie Row Styles */
-    .movie-row {
-        flex-direction: column; /* Stack movies on smaller screens */
+    .navbar-links {
+        flex-direction: column;
     }
 
-    .movie-block {
-        flex: 1 1 100%; /* Full width on mobile */
-        margin-bottom: 15px; /* Space between stacked movies */
+    .navbar-links a {
+        font-size: 16px;
     }
 
-    .movie-poster {
-        margin-bottom: 10px;
-        width: 100%; /* Full width for posters on mobile */
+    .slider-container {
+        margin: 10px;
     }
 
-    .day-title {
-        font-size: 1.6rem; /* Adjusted font size for day titles */
+    .slide {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
     }
 
-    .movie-details h3 {
-        font-size: 1.3rem; /* Adjusted font size for movie titles */
+    .slide-info h2 {
+        font-size: 24px;
+    }
+
+    .slide-info p {
+        font-size: 16px;
+    }
+
+    .tickets-button {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .prev, .next {
+        font-size: 24px;
+        padding: 8px;
+    }
+
+    /* Контакти */
+    .contacts-container {
+        max-width: 90%;
+        padding: 20px;
+    }
+}
+
+/* Медийни заявки за малки телефони (до 480px ширина) */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .navbar .logo {
+        height: 50px;
+    }
+
+    .navbar-title {
+        font-size: 20px;
+    }
+
+    .navbar-links a {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .slider-container {
+        margin: 5px;
+    }
+
+    .slide-info {
+        padding: 10px;
+    }
+
+    .tickets-button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .prev, .next {
+        font-size: 20px;
+        padding: 6px;
+    }
+
+    .contacts-container {
+        padding: 15px;
     }
 }
 
