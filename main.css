@@ -16,8 +16,8 @@ body {
 
 
 .navbar-container {
-    position: relative; /* Ensure navbar is positioned in the normal flow */
-    z-index: 20; /* Make navbar appear above the search container */
+    position: relative;
+    z-index: 20;
     margin-bottom: 20px;
 }
 
@@ -222,27 +222,26 @@ body {
 
 /* Tickets Button */
 .tickets-button {
-    background: linear-gradient(135deg, #e50914, #c3071a); /* Gradient background for a modern look */
-    color: white; /* White text */
-    padding: 12px 24px; /* Increased padding for a larger button */
-    border: none; /* Remove border */
-    border-radius: 8px; /* Slightly more rounded corners */
-    font-weight: bold; /* Bold text */
-    font-size: 18px; /* Font size */
-    text-decoration: none; /* Remove underline from link */
-    margin-top: 20px; /* Space above the button */
-    cursor: pointer; /* Change cursor to pointer */
-    transition: background 0.3s, transform 0.2s ease-in-out, box-shadow 0.3s; /* Smooth transitions */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    background: linear-gradient(135deg, #e50914, #c3071a);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s ease-in-out, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .tickets-button:hover {
-    background: linear-gradient(135deg, #f83a31, #b82e36); /* Darker gradient on hover */
-    transform: scale(1.05); /* Slight scaling effect on hover */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover for more emphasis */
+    background: linear-gradient(135deg, #f83a31, #b82e36);
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Navigation Buttons */
 .prev, .next {
     position: absolute;
     top: 50%;
@@ -259,8 +258,8 @@ body {
 }
 
 .prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8); /* Darker on hover */
-    transform: scale(1.1); /* Slight scaling on hover */
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: scale(1.1);
 }
 
 .prev {
@@ -271,13 +270,12 @@ body {
     right: 5px;
 }
 
-/* Contact-specific styles */
 
 .contacts-container {
     max-width: 1000px;
     margin: 50px auto;
     padding: 30px;
-    background-color: rgba(44, 44, 44, 0.7); /* Dark grey background with 80% opacity */
+    background-color: rgba(44, 44, 44, 0.7);
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     color: #f5f5f5;
@@ -296,9 +294,8 @@ body {
     text-align: center;
 }
 
-/* Individual city contact sections */
 .contact-city {
-    background-color: rgba(30, 30, 30, 0.9); /* Dark grey background with 90% opacity */
+    background-color: rgba(30, 30, 30, 0.9);
     padding: 20px;
     border-radius: 8px;
     margin-bottom: 30px;
@@ -326,22 +323,21 @@ body {
     margin-bottom: 5px;
 }
 
-/* Gallery Page Styles */
 
 .gallery-container {
     max-width: 1200px;
     margin: 50px auto;
     padding: 30px;
-    background-color: rgba(44, 44, 44, 0.8); /* Dark grey background with 80% opacity */
+    background-color: rgba(44, 44, 44, 0.8);
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adds depth with shadow */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     color: #f5f5f5;
     text-align: center;
 }
 
 .gallery-container h1 {
     font-size: 2.5rem;
-    color: #e50914; /* Netflix-like red for the title */
+    color: #e50914;
     margin-bottom: 20px;
 }
 
@@ -349,7 +345,7 @@ body {
     font-size: 1.2rem;
     margin-bottom: 20px;
     color: #f5f5f5;
-    line-height: 1.6; /* Improved readability */
+    line-height: 1.6;
 }
 
 .gallery-grid {
@@ -361,9 +357,9 @@ body {
 
 .gallery-item {
     flex: 1;
-    max-width: 300px; /* Maximum width for each image */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for the images */
-    border-radius: 10px; /* Rounded corners */
+    max-width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
     overflow: hidden;
 }
 
@@ -371,59 +367,58 @@ body {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 10px; /* Rounded corners for the image */
+    border-radius: 10px;
 }
 
 .pros-box {
-    background-color: rgba(186, 0, 33, 0.5); /* Dark red background with 80% opacity */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-    padding: 20px; /* Padding around the content */
-    margin: 20px auto; /* Center the box */
-    max-width: 600px; /* Set a max-width */
-    color: #f5f5f5; /* Light text color */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+    background-color: rgba(186, 0, 33, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    color: #f5f5f5;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .pros-box:hover {
-    transform: scale(1.02); /* Scale up slightly on hover */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Deeper shadow on hover */
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
 .pros-box h2 {
-    color: white; /* Red title */
-    text-align: center; /* Center the title */
-    margin-bottom: 15px; /* Space below title */
+    color: white;
+    text-align: center;
+    margin-bottom: 15px;
 }
 
 .pros-box p {
-    text-align: left; /* Align text left */
-    margin: 10px 0; /* Space between paragraphs */
-    position: relative; /* Position for icon */
-    padding-left: 30px; /* Space for icon */
-    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    text-align: left;
+    margin: 10px 0;
+    position: relative;
+    padding-left: 30px;
+    transition: background-color 0.3s ease;
 }
 
 .pros-box p:hover {
-    background-color: darkgrey; /* Light red background on hover */
-    border-radius: 5px; /* Rounded corners on hover */
+    background-color: darkgrey;
+    border-radius: 5px;
 }
 
 .icon {
-    position: absolute; /* Position icon */
-    left: 10px; /* Space from the left */
-    top: 0; /* Align at the top */
-    color: white; /* Red icon color */
-    font-weight: bold; /* Bold icon */
+    position: absolute;
+    left: 10px;
+    top: 0;
+    color: white;
+    font-weight: bold;
 }
 
-/* Films Section Styles */
 .films-section {
     padding: 50px;
     text-align: center;
     margin-top: 50px;
-    background-color: rgba(0, 0, 0, 0.5); /* Black background with 50% opacity */
-    border-radius: 10px; /* Optional: add rounded corners */
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
 }
 
 .films-title {
@@ -431,32 +426,32 @@ body {
     font-size: 36px;
     font-weight: bold;
     text-transform: uppercase;
-    margin-bottom: 20px; /* Reduced margin to minimize space */
+    margin-bottom: 20px;
 }
 
 .cinema-thumbnail-gallery {
-    display: flex; /* Use flex to create a horizontal layout */
-    overflow-x: auto; /* Enable horizontal scrolling */
-    gap: 20px; /* Add spacing between items */
-    padding: 10px 0; /* Padding for some space around the items */
-    scroll-behavior: smooth; /* Smooth scrolling effect */
-    scrollbar-width: thin; /* For Firefox */
-    -ms-overflow-style: none; /* For Internet Explorer and Edge */
-    justify-content: center; /* Center align the thumbnails */
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px 0;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    -ms-overflow-style: none;
+    justify-content: center;
 }
 
 .cinema-thumbnail-gallery::-webkit-scrollbar {
-    display: none; /* Hide scrollbar in WebKit browsers */
+    display: none;
 }
 
 .cinema-thumbnail-item {
-    width: 200px; /* Fixed width to standardize all thumbnails */
+    width: 200px;
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
 }
 
 .cinema-thumbnail-item:hover {
-    transform: scale(1.05); /* Hover effect to make the thumbnail zoom slightly */
+    transform: scale(1.05);
 }
 
 .thumbnail-image {
@@ -464,7 +459,7 @@ body {
     height: 300px;
     background-position: center;
     background-size: cover;
-    border-radius: 10px; /* Rounded corners for a more modern look */
+    border-radius: 10px;
     margin-bottom: 10px;
 }
 
@@ -477,38 +472,38 @@ body {
     margin-top: 5px;
 }
 
-/* Coming Soon Section Styles */
+
 .coming-soon-section {
     padding: 50px;
     text-align: center;
     margin-top: 50px;
-    background-color: rgba(0, 0, 0, 0.5); /* Black background with 50% opacity */
-    border-radius: 10px; /* Optional: add rounded corners */
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
 }
 
 .coming-soon-section .cinema-thumbnail-gallery {
-    display: flex; /* Use flex to create a horizontal layout */
-    overflow-x: auto; /* Enable horizontal scrolling */
-    gap: 20px; /* Add spacing between items */
-    padding: 10px 0; /* Padding for some space around the items */
-    scroll-behavior: smooth; /* Smooth scrolling effect */
-    scrollbar-width: thin; /* For Firefox */
-    -ms-overflow-style: none; /* For Internet Explorer and Edge */
-    justify-content: center; /* Center align the thumbnails */
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px 0;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    -ms-overflow-style: none;
+    justify-content: center;
 }
 
 .coming-soon-section .cinema-thumbnail-gallery::-webkit-scrollbar {
-    display: none; /* Hide scrollbar in WebKit browsers */
+    display: none;
 }
 
 .coming-soon-section .cinema-thumbnail-item {
-    width: 200px; /* Fixed width to standardize all thumbnails */
+    width: 200px;
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
 }
 
 .coming-soon-section .cinema-thumbnail-item:hover {
-    transform: scale(1.05); /* Hover effect to make the thumbnail zoom slightly */
+    transform: scale(1.05);
 }
 
 .coming-soon-section .thumbnail-image {
@@ -516,7 +511,7 @@ body {
     height: 300px;
     background-position: center;
     background-size: cover;
-    border-radius: 10px; /* Rounded corners for a more modern look */
+    border-radius: 10px;
     margin-bottom: 10px;
 }
 
@@ -534,32 +529,32 @@ body {
     font-size: 36px;
     font-weight: bold;
     text-transform: uppercase;
-    margin-bottom: 20px; /* Reduced margin to minimize space */
+    margin-bottom: 20px;
 }
 
 .coming-soon-section .cinema-thumbnail-gallery {
-    display: flex; /* Use flex to create a horizontal layout */
-    overflow-x: auto; /* Enable horizontal scrolling */
-    gap: 20px; /* Add spacing between items */
-    padding: 10px 0; /* Padding for some space around the items */
-    scroll-behavior: smooth; /* Smooth scrolling effect */
-    scrollbar-width: thin; /* For Firefox */
-    -ms-overflow-style: none; /* For Internet Explorer and Edge */
-    justify-content: center; /* Center align the thumbnails */
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px 0;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    -ms-overflow-style: none;
+    justify-content: center;
 }
 
 .coming-soon-section .cinema-thumbnail-gallery::-webkit-scrollbar {
-    display: none; /* Hide scrollbar in WebKit browsers */
+    display: none;
 }
 
 .coming-soon-section .cinema-thumbnail-item {
-    width: 200px; /* Fixed width to standardize all thumbnails */
+    width: 200px;
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
 }
 
 .coming-soon-section .cinema-thumbnail-item:hover {
-    transform: scale(1.05); /* Hover effect to make the thumbnail zoom slightly */
+    transform: scale(1.05);
 }
 
 .coming-soon-section .thumbnail-image {
@@ -567,7 +562,7 @@ body {
     height: 300px;
     background-position: center;
     background-size: cover;
-    border-radius: 10px; /* Rounded corners for a more modern look */
+    border-radius: 10px;
     margin-bottom: 10px;
 }
 
@@ -580,93 +575,93 @@ body {
     margin-top: 5px;
 }
 
-/* Best Sellers enhanced styling with default rotation */
+
 .best-sellers-text {
     position: absolute;
-    top: 30px; /* Adjust to position it */
-    left: 11%; /* Adjusted horizontal position */
-    transform: translateX(-50%) rotate(0deg); /* No rotation */
-    font-size: 1.5rem; /* Reduced font size */
-    color: white; /* White text color */
-    background-color: #e50914; /* Solid red background */
-    padding: 5px 15px; /* Reduced padding for smaller text */
-    border: 2px solid white; /* Slightly thinner border */
-    border-radius: 5px; /* Slightly rounded corners */
-    font-family: 'Arial', sans-serif; /* Simple, readable font */
-    text-align: center; /* Centered text */
-    z-index: 10; /* Ensure it stays on top */
-    text-transform: uppercase; /* All caps text */
-    letter-spacing: 1px; /* Slightly reduced letter spacing */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Soft shadow to make it pop */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition on hover */
-    width: 25%; /* Reduced width */
+    top: 30px;
+    left: 11%;
+    transform: translateX(-50%) rotate(0deg);
+    font-size: 1.5rem;
+    color: white;
+    background-color: #e50914;
+    padding: 5px 15px;
+    border: 2px solid white;
+    border-radius: 5px;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    z-index: 10;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 25%;
 }
 
-/* Add hover effect for size increase */
+
 .best-sellers-text:hover {
-    transform: translateX(-50%) scale(1.1) rotate(0deg); /* Keep rotation and add scale on hover */
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5); /* Deeper shadow on hover */
+    transform: translateX(-50%) scale(1.1) rotate(0deg);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
 }
 
 
-/* Ensure the slide-info is relatively positioned to contain the Best Sellers text */
+
 .slide-info {
     position: relative;
     padding: 20px;
 }
 
 .footer {
-    background-color: rgba(0, 0, 0, 0.7); /* Black with 70% opacity */
-    color: white; /* Text color */
-    padding: 20px; /* Add some padding */
-    text-align: center; /* Center align text */
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 20px;
+    text-align: center;
 }
 
-/* Styling for the weekly program section */
+
 .program-section {
     max-width: 1200px;
     margin: 20px auto;
     padding: 20px;
-    background-color: rgba(26, 26, 26, 0.5); /* Dark background with 0.5 opacity */
+    background-color: rgba(26, 26, 26, 0.5);
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
 .program-section h2 {
     text-align: center;
-    font-size: 2.5rem; /* Increased font size */
+    font-size: 2.5rem;
     margin-bottom: 20px;
-    color: #ffffff; /* White text for readability */
+    color: #ffffff;
     font-weight: bold;
 }
 
-/* Styling for each day block */
+
 .day-block {
     margin-bottom: 40px;
 }
 
 .day-title {
     font-size: 1.8rem;
-    color: #ff3333; /* Red title to match the red accents on the site */
+    color: #ff3333;
     margin-bottom: 15px;
     font-weight: bold;
     text-transform: uppercase;
 }
 
-/* Styling for movie rows */
+
 .movie-row {
     display: flex;
-    justify-content: space-between; /* Ensures even spacing between movies */
-    margin-bottom: 20px; /* Space between rows of movies */
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
-/* Styling for individual movie blocks */
+
 .movie-block {
-    flex: 0 1 48%; /* Allows two blocks to fit side by side */
+    flex: 0 1 48%;
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Adjusts alignment */
-    background-color: rgba(42, 42, 42, 0.5); /* Slightly lighter dark background with 0.5 opacity */
+    justify-content: flex-start;
+    background-color: rgba(42, 42, 42, 0.5);
     border-radius: 8px;
     padding: 15px;
     margin-bottom: 15px;
@@ -676,12 +671,12 @@ body {
 
 .movie-block:hover {
     transform: translateY(-5px);
-    background-color: rgba(51, 51, 51, 0.5); /* Hover effect with darker background and 0.5 opacity */
+    background-color: rgba(51, 51, 51, 0.5);
 }
 
-/* Styling for the movie posters */
+
 .movie-poster {
-    width: 100px; /* Adjust size as needed */
+    width: 100px;
     height: auto;
     border-radius: 5px;
     margin-right: 15px;
@@ -689,7 +684,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-/* Styling for movie details */
+
 .movie-details {
     flex-grow: 1;
 }
@@ -697,18 +692,18 @@ body {
 .movie-details h3 {
     font-size: 1.4rem;
     margin-bottom: 5px;
-    color: #ffffff; /* White text for movie title */
+    color: #ffffff;
     font-weight: bold;
 }
 
 .show-time {
     font-size: 1.2rem;
-    color: #cccccc; /* Light gray for the show time */
+    color: #cccccc;
     font-style: italic;
 }
 
 .modal {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed; 
     z-index: 1; 
     left: 0;
@@ -716,32 +711,32 @@ body {
     width: 100%; 
     height: 100%; 
     overflow: auto; 
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .modal-content {
-    display: flex; /* Use flexbox for layout */
+    display: flex;
     margin: 10% auto; 
     padding: 20px;
     border: 1px solid #888;
     width: 80%; 
-    max-width: 800px; /* Set a maximum width */
-    border-radius: 8px; /* Optional: Add rounded corners */
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background for content */
-    color: white; /* Set text color to white */
+    max-width: 800px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
 }
 
 .modal-image {
-    flex: 1; /* Allow the image to take up space */
-    height: auto; /* Adjust height automatically */
-    background-size: contain; /* Show the full image */
-    background-repeat: no-repeat; /* Avoid repeating the image */
-    background-position: center; /* Center the image */
+    flex: 1;
+    height: auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .modal-info {
-    flex: 1; /* Allow the info to take up space */
-    padding: 20px; /* Add padding for spacing */
+    flex: 1;
+    padding: 20px;
 }
 
 .close {
@@ -753,7 +748,7 @@ body {
 
 .close:hover,
 .close:focus {
-    color: red; /* Change color to red on hover */
+    color: red;
     text-decoration: none;
     cursor: pointer;
 }
@@ -761,81 +756,80 @@ body {
 .ticketspop-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #ff0000; /* Red background */
-    color: white; /* White text */
+    background-color: #ff0000;
+    color: white;
     text-decoration: none;
-    border-radius: 5px; /* Rounded corners */
-    margin-top: 20px; /* Increased space above the button */
+    border-radius: 5px;
+    margin-top: 20px;
 }
 
 
-/* Coming Soon Modal Styles */
 #comingSoonModal {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed; 
-    z-index: 1000; /* Sit on top */
+    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%; 
     height: 100%; 
     overflow: auto; 
-    background-color: rgba(0, 0, 0, 0.7); /* Darker semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 #comingSoonModal .modal-content {
-    display: flex; /* Use flexbox for layout */
-    margin: 10% auto; /* Center the modal vertically and horizontally */
-    padding: 20px; /* Standard padding */
+    display: flex;
+    margin: 10% auto;
+    padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Modal takes 80% of the width */
-    max-width: 800px; /* Set a maximum width */
-    border-radius: 8px; /* Optional: Add rounded corners */
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background for content */
-    color: white; /* Set text color to white */
+    width: 80%;
+    max-width: 800px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
 }
 
 #comingSoonModal .modal-image {
-    flex: 1; /* Allow the image to take up space */
-    height: auto; /* Adjust height automatically */
-    background-size: contain; /* Show the full image */
-    background-repeat: no-repeat; /* Avoid repeating the image */
-    background-position: center; /* Center the image */
-    max-height: 400px; /* Set a max height to control size */
+    flex: 1;
+    height: auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    max-height: 400px;
 }
 
 #comingSoonModal .modal-info {
-    flex: 1; /* Allow the info to take up space */
-    padding: 20px; /* Add padding for spacing */
+    flex: 1;
+    padding: 20px;
 }
 
 #comingSoonModal .close {
-    color: #aaa; /* Default close button color */
-    float: right; /* Align close button to the right */
-    font-size: 28px; /* Font size */
-    font-weight: bold; /* Bold text */
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
 }
 
 #comingSoonModal .close:hover,
 #comingSoonModal .close:focus {
-    color: red; /* Change color to red on hover */
-    text-decoration: none; /* No underline */
-    cursor: pointer; /* Pointer cursor */
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .buy-tickets-button {
      display: inline-block;
     padding: 10px 20px;
-    background-color: #ff0000; /* Button color */
-    color: white; /* Text color */
+    background-color: #ff0000;
+    color: white;
     text-align: center;
-    text-decoration: none; /* No underline */
-    border-radius: 5px; /* Rounded corners */
-    transition: background-color 0.3s ease; /* Smooth background change */
-    margin-top: 10px; /* Add margin to move the button lower */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
 }
 
 .buy-tickets-button:hover {
-    background-color: darkred; /* Darker shade on hover */
+    background-color: darkred;
 }
 
 
@@ -848,7 +842,6 @@ body {
     color: red;
 }
 
-/* Медийни заявки за таблети (до 1024px ширина) */
 @media (max-width: 1024px) {
     .navbar {
         flex-direction: column;
@@ -892,7 +885,6 @@ body {
     }
 }
 
-/* Медийни заявки за мобилни устройства (до 768px ширина) */
 @media (max-width: 768px) {
     body {
         font-size: 14px;
@@ -950,7 +942,6 @@ body {
     }
 }
 
-/* Медийни заявки за малки телефони (до 480px ширина) */
 @media (max-width: 480px) {
     .navbar {
         padding: 10px;
@@ -994,69 +985,66 @@ body {
 
 
 
-/* Define the slide-in animation */
 @keyframes slideIn {
     0% {
-        transform: translateY(-100%); /* Start off-screen, above */
+        transform: translateY(-100%);
         opacity: 0;
     }
     100% {
-        transform: translateY(0); /* End at its normal position */
+        transform: translateY(0);
         opacity: 1;
     }
 }
 
-/* Define the slide-in animation */
 @keyframes slideIn {
     0% {
-        transform: translateY(-100%); /* Start off-screen, above */
+        transform: translateY(-100%);
         opacity: 0;
     }
     100% {
-        transform: translateY(0); /* End at its normal position */
+        transform: translateY(0);
         opacity: 1;
     }
 }
 
-/* Styling for the search container */
 .search-container {
-    width: 100%; /* Full width */
+    width: 100%;
     padding: 10px;
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
-    color: white; /* White text */
-    border-radius: 0; /* No rounded corners */
-    box-shadow: none; /* Remove shadow */
-    position: relative; /* Allow it to scroll with the page */
-    top: 0; /* No need to set top, it's relative now */
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border-radius: 0;
+    box-shadow: none;
+    position: relative;
+    top: 0;
     left: 0;
-    z-index: 10; /* Ensure the search bar is below the navbar */
+    z-index: 10;
     display: flex;
-    justify-content: center; /* Center the search form horizontally */
+    justify-content: center;
     align-items: center;
-    padding-top: 10px; /* Add some spacing to the top */
-    margin-top: -30px; /* Adjust this value to move the search container higher */
+    padding-top: 10px;
+    margin-top: -30px;
     
-    animation: slideIn 1s ease-out; /* Apply the slide-in animation */
+    animation: slideIn 1s ease-out;
 }
 
-/* Title styling */
+
 .search-container h2 {
     font-family: 'Arial', sans-serif;
-    color: #fff; /* Make the title text white */
+    color: #fff;
     text-align: center;
     margin-bottom: 0px;
 }
 
-/* Form styling */
+
 .search-container form {
     display: flex;
     align-items: center;
     gap: 10px;
     width: 100%;
-    max-width: 900px; /* Optional: Limit the max width of the search form */
+    max-width: 900px;
 }
 
-/* Text input styling */
+
 .search-container input[type="text"] {
     padding: 12px;
     font-size: 16px;
@@ -1067,12 +1055,12 @@ body {
     transition: border-color 0.3s ease;
 }
 
-/* Focused input styling */
+
 .search-container input[type="text"]:focus {
     border-color: #007bff;
 }
 
-/* Button styling */
+
 .search-container button {
     padding: 12px 20px;
     background-color: red;
@@ -1084,15 +1072,15 @@ body {
     transition: background-color 0.3s ease;
 }
 
-/* Button hover effect */
+
 .search-container button:hover {
     background-color: #f83a31;
     transform: scale(1.05);
 }
 
-/* Placeholder styling */
+
 .search-container input[type="text"]::placeholder {
-    color: #ccc; /* Placeholder text color */
+    color: #ccc;
 }
 
 .coming-soon-text {
@@ -1100,41 +1088,41 @@ body {
             font-weight: bold;
 }
 
-/* Suggestions container */
+
 .suggestions-container {
     position: absolute;
     top: 100%;
     left: 670px;
-    width: 28%; /* Make the suggestion container match the width of the input */
-    background-color: black; /* Black background */
+    width: 28%;
+    background-color: black;
      margin: 0;
     padding: 0;
     border: none;
-    border-radius: 5px; /* Match the search bar's border radius */
+    border-radius: 5px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 10;
-    max-height: 150px; /* Reduced max height to make it more compact */
+    max-height: 150px;
     overflow-y: auto;
     display: flex;
-    flex-direction: column; /* Stack the items vertically */
-    align-items: center; /* Center the items horizontally */
-    justify-content: center; /* Center the items vertically */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Individual suggestion item */
+
 .suggestion-item {
-    padding: 8px 12px; /* Adjust padding to make it smaller */
-    font-size: 14px; /* Smaller font size */
+    padding: 8px 12px;
+    font-size: 14px;
     cursor: pointer;
-    color: white; /* White text for suggestions */
-    width: 100%; /* Make the suggestion item take full width */
-    text-align: center; /* Center the text inside each item */
-    border: none; /* Remove the border */
+    color: white;
+    width: 100%;
+    text-align: center;
+    border: none;
 }
 
-/* Hover effect for suggestion items */
+
 .suggestion-item:hover {
-    background-color: grey; /* Grey background on hover */
+    background-color: grey;
 }
 
 .films-header {

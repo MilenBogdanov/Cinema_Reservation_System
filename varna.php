@@ -5,7 +5,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     exit;
 }
 
-// Logout functionality
+
 if (isset($_POST['logout'])) {
     session_unset();
     session_destroy();
@@ -13,27 +13,27 @@ if (isset($_POST['logout'])) {
     exit;
 }
 
-// Database connection
+
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "registration";
 
-// Create connection
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Fetch schedule data for Varna
+
 $sql = "SELECT day, movie_name, show_times, image FROM varna_schedule ORDER BY day, movie_name";
 $result = $conn->query($sql);
 
 $moviesByDay = [];
 if ($result->num_rows > 0) {
-    // Organize data by day of the week
+    
     while ($row = $result->fetch_assoc()) {
         $moviesByDay[$row['day']][] = $row;
     }
@@ -53,7 +53,7 @@ $conn->close();
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-<!-- Navbar -->
+
 <div class="navbar-container">
     <div class="navbar">
         <a href="main.php">
@@ -84,12 +84,12 @@ $conn->close();
     </div>
 </div>
 
-<!-- Weekly Program Section -->
+
 <div class="program-section">
     <h2>Weekly Program - Varna</h2>
 
     <?php
-    // Days of the week
+    
     $daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
     
     foreach ($daysOfWeek as $day) {
@@ -114,7 +114,7 @@ $conn->close();
     ?>
 </div>
 
-<!-- Footer -->
+
 <footer class="footer">
     <p>© 2025 Cinema-Island. All rights reserved.</p>
 </footer>

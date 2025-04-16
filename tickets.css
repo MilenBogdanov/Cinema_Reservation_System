@@ -2,9 +2,9 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-image: url('images/mainbackground2.webp'); /* Set background image */
-    background-size: cover; /* Cover the entire background */
-    background-position: center; /* Center the background image */
+    background-image: url('images/mainbackground2.webp');
+    background-size: cover;
+    background-position: center;
     margin: 0;
     padding: 0;
 }
@@ -13,14 +13,14 @@ body {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.7);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
     text-align: center;
-    color: red; /* White color for better contrast */
+    color: red;
 }
 
 h3{
@@ -32,29 +32,29 @@ h3{
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 8px;
-    background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent background */
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .form-group {
     margin-bottom: 15px;
-    width: 100%; /* Ensures the form group takes full width of its container */
+    width: 100%;
 }
 
 label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-    color: #fff; /* Adjust according to your design */
+    color: #fff;
 }
 
 input[type="number"], select {
-    width: 100%; /* Ensure all inputs are 100% of their parent */
+    width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
-    box-sizing: border-box; /* Ensures padding is included in the width */
-    background-color: rgba(211, 211, 211, 0.8); /* Semi-transparent light grey */
+    box-sizing: border-box;
+    background-color: rgba(211, 211, 211, 0.8);
 }
 
 select:focus, input[type="number"]:focus {
@@ -62,7 +62,7 @@ select:focus, input[type="number"]:focus {
     outline: none;
 }
 
-/* Default seat color set to green */
+
 .seat {
     display: inline-block;
     width: 40px;
@@ -73,36 +73,36 @@ select:focus, input[type="number"]:focus {
     line-height: 40px;
     cursor: pointer;
     border-radius: 4px;
-    background-color: green; /* Default seat color */
+    background-color: green;
     transition: background-color 0.3s;
 }
 
 .seat:hover {
     box-shadow: 
-        4px 4px 8px rgba(0, 0, 0, 0.2), /* Softer outer shadow */
+        4px 4px 8px rgba(0, 0, 0, 0.2),
         inset 1px 1px 2px rgba(255, 255, 255, 0.3), 
-        inset -2px -2px 4px rgba(0, 0, 0, 0.3); /* Subtle inner shadows */
-    transform: translateY(-1px); /* Slight lift */
+        inset -2px -2px 4px rgba(0, 0, 0, 0.3);
+    transform: translateY(-1px);
 }
 
 .seat.selected {
-    background-color: #6c7ae0; /* Color for selected seats */
+    background-color: #6c7ae0;
     color: #fff;
 }
 
 .seat.reserved {
-    background-color: #d9534f; /* Color for reserved seats */
+    background-color: #d9534f;
     cursor: not-allowed;
 }
 
 .summary p {
     font-size: 18px;
     font-weight: bold;
-    color: #fff; /* White color for better contrast */
+    color: #fff;
 }
 
 button {
-    background-color: red; /* Red button */
+    background-color: red;
     color: white;
     border: none;
     padding: 12px 20px;
@@ -114,17 +114,17 @@ button {
 }
 
 button:hover {
-    background-color: darkred; /* Darker shade on hover */
+    background-color: darkred;
 }
 
 .message {
     color: red;
     font-weight: bold;
     margin-top: 10px;
-    display: none; /* Initially hidden */
+    display: none;
 }
 
-/* Media Queries for responsiveness */
+
 @media (max-width: 600px) {
     .seat {
         width: 30px;
@@ -133,34 +133,34 @@ button:hover {
     }
 }
 
-/* Movie Prices Box */
+
 .movie-prices {
     margin-bottom: 20px;
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 8px;
-    background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent background */
+    background-color: rgba(255, 255, 255, 0.2);
     color: white;
 }
 
 .movie-prices h3 {
     margin-top: 0;
     font-size: 22px;
-    color: #fff; /* White for better contrast */
+    color: #fff;
     text-align: center;
 }
 
 .movie-prices ul {
-    list-style-type: none; /* Remove default bullet points */
+    list-style-type: none;
     padding: 0;
 }
 
 .movie-prices li {
     font-size: 18px;
     padding: 5px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border between items */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .movie-prices li:last-child {
-    border-bottom: none; /* Remove border from the last item */
+    border-bottom: none;
 }

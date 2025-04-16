@@ -6,7 +6,6 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true || $_SESSION
     exit;
 }
 
-// Logout functionality
 if (isset($_POST['logout'])) {
     session_unset();
     session_destroy();

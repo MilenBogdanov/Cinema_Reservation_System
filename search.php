@@ -14,13 +14,13 @@ if (isset($_POST['logout'])) {
     exit;
 }
 
-// Get the search query
+
 $query = isset($_GET['query']) ? trim($_GET['query']) : '';
 
 $searchResults = [];
 
 if (!empty($query)) {
-    // Prepare and execute the search query
+
     $sql = "(SELECT title, image_url, description, duration, genre, release_date, 'now_playing' AS source 
             FROM now_playing 
             WHERE title LIKE ? OR genre LIKE ?) 
@@ -57,7 +57,7 @@ $conn->close();
 </head>
 <body>
 
-<!-- Navbar -->
+
 <div class="navbar-container">
     <div class="navbar">
         <a href="main.php">
@@ -66,7 +66,7 @@ $conn->close();
         <div class="navbar-title">Cinema-Island</div>
         <div class="navbar-links">
             <a href="main.php">Home</a>
-            <a href="#now-playing">Movies</a>
+            <a href="main.php#now-playing">Movies</a>
             <div class="dropdown">
             <a href="#">Weekly Program</a>
             <ul class="dropdown-menu">
@@ -75,7 +75,7 @@ $conn->close();
                     <li><a href="plovdiv.php">Plovdiv</a></li>
                 </ul>
             </div>
-            <a href="#coming-soon">Coming Soon</a>
+            <a href="main.php#coming-soon">Coming Soon</a>
             <a href="gallery.php">Gallery</a>
             <a href="contacts.php">Contacts</a>
 
@@ -89,7 +89,7 @@ $conn->close();
     </div>
 </div>
 
-<!-- Search Results Section -->
+
 <div class="films-section">
     <div class="films-header">
         <h2 class="films-title">Search Results for "<?php echo htmlspecialchars($query); ?>"</h2>
@@ -137,7 +137,7 @@ $conn->close();
 </div>
 
 <script>
-    let originalMoviesHTML = ""; // Store the original movie list at page load
+    let originalMoviesHTML = "";
 
 document.addEventListener("DOMContentLoaded", function () {
     originalMoviesHTML = document.getElementById('resultsContainer').innerHTML;
@@ -148,7 +148,7 @@ function sortResults() {
     const items = Array.from(container.getElementsByClassName('cinema-thumbnail-item'));
 
     if (sortBy === "default") {
-        container.innerHTML = originalMoviesHTML; // Reset to original state
+        container.innerHTML = originalMoviesHTML;
         return;
     }
 
@@ -231,9 +231,7 @@ function clearFilters() {
     </div>
 </div>
 
-<footer class="footer">
-    <p>© 2025 Cinema-Island. All rights reserved.</p>
-</footer>
 
 </body>
+
 </html>

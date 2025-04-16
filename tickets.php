@@ -144,11 +144,11 @@ $movies = [
     'Smile 2' => 9.00
 ];
  
-// Initialize total price variable
+
 $totalPrice = 0;
 $reservedSeats = [];
  
-// Handle form submission for ticket selection
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get POST data
     $city = $_POST['city'];
@@ -157,54 +157,54 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $time = $_POST['time'];
     $tickets = $_POST['tickets'];
     $seats = isset($_POST['seats']) ? explode(',', $_POST['seats']) : [];
-    $userEmail = $_SESSION['email']; // Assuming user email is stored in session
+    $userEmail = $_SESSION['email'];
     $message = "";
-    // Calculate total price
+
     if (isset($movies[$movie])) {
         $totalPrice = $movies[$movie] * $tickets;
     }
  
-    // Reserve the seats in the database
+
 if ($totalPrice > 0 && !empty($seats)) {
     foreach ($seats as $seat) {
-        // Prepare the SQL statement
+        
         $sql = "INSERT INTO seats (city, movie, day, screening_time, seat_number, user_email) VALUES (?, ?, ?, ?, ?, ?)
                 ON DUPLICATE KEY UPDATE user_email = ?";
  
         $stmt = $conn->prepare($sql);
  
-        // Check if prepare() was successful
+        
         if ($stmt === false) {
             die("Error preparing statement: " . $conn->error);
         }
  
-        // Bind parameters
+        
         if (!$stmt->bind_param("sssssss", $city, $movie, $day, $time, $seat, $userEmail, $userEmail)) {
             die("Error binding parameters: " . $stmt->error);
         }
  
-        // Execute the statement
+        
         if (!$stmt->execute()) {
             die("Execute error: " . $stmt->error);
         }
  
-        // Close the statement after execution
+        
         $stmt->close();
     }
  
-    // Set a message indicating success
+    
     $purchaseMessage = "Your tickets for '$movie' in '$city' have been successfully booked.";
 }
 }
  
  
  
-// Fetch reserved seats for the current movie and screening in the selected city
+
 if ($_SERVER["REQUEST_METHOD"] == "POST" && $totalPrice > 0) {
     $sql = "SELECT seat_number FROM seats WHERE city = ? AND movie = ? AND day = ? AND screening_time = ?";
     $stmt = $conn->prepare($sql);
  
-    // Check if prepare() was successful
+    
     if ($stmt === false) {
         die("Error preparing statement: " . $conn->error);
     }
@@ -219,16 +219,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $totalPrice > 0) {
  
     $stmt->close();
 }elseif ($_SERVER["REQUEST_METHOD"] != "POST") {
-    // Check if the city is set
+    
     if (isset($_POST['city'])) {
         $city = $_POST['city'];
  
-        // Example values; you might want to change these based on the user's selection
+        
         $movie = isset($_POST['movie']) ? $_POST['movie'] : '';
         $day = isset($_POST['day']) ? $_POST['day'] : '';
         $time = isset($_POST['time']) ? $_POST['time'] : '';
  
-        // Fetch reserved seats based on user selection
+        
         if ($movie && $day && $time) {
             $sql = "SELECT seat_number FROM seats WHERE city = ? AND movie = ? AND day = ? AND screening_time = ?";
             $stmt = $conn->prepare($sql);
@@ -250,15 +250,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $totalPrice > 0) {
     }
 }
  
-// New block to fetch reserved seats if the form has not been submitted yet
+
 if ($_SERVER["REQUEST_METHOD"] != "POST") {
-    // Example values; you might want to change these based on the user's selection
+    
     $city = isset($_POST['city']) ? $_POST['city'] : '';
     $movie = isset($_POST['movie']) ? $_POST['movie'] : '';
     $day = isset($_POST['day']) ? $_POST['day'] : '';
     $time = isset($_POST['time']) ? $_POST['time'] : '';
  
-    // Fetch reserved seats based on user selection
+    
     if ($city && $movie && $day && $time) {
         $sql = "SELECT seat_number FROM seats WHERE city = ? AND movie = ? AND day = ? AND screening_time = ?";
         $stmt = $conn->prepare($sql);
@@ -280,7 +280,7 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
 }
  
 if (isset($purchaseMessage)) {
-    // The HTML for the popup message
+    
     $purchaseConfirmation = "
         <div id='confirmationPopup' style='
             position: fixed;
@@ -340,7 +340,7 @@ if (isset($purchaseMessage)) {
         </script>
     ";
  
-    // Display the popup confirmation message
+    
     echo $purchaseConfirmation;
 }
  
@@ -351,12 +351,12 @@ if (isset($purchaseMessage)) {
 <head>
     <meta charset="UTF-8">
     <title>Book Tickets</title>
-    <link rel="stylesheet" href="main.css"> <!-- Link to main.css for navbar styling -->
-    <link rel="stylesheet" href="tickets.css"> <!-- Link to tickets.css for page-specific styling -->
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="tickets.css">
 </head>
 <body>
  
-    <!-- Navbar -->
+    
     <div class="navbar-container">
         <div class="navbar">
             <a href="main.php">
@@ -387,7 +387,7 @@ if (isset($purchaseMessage)) {
     <div class="container">
         <h1>Book Tickets</h1>
         <br>
-        <!-- Movie Prices Box -->
+        
         <div class="movie-prices">
             <h3>Movie Prices</h3>
             <ul>
@@ -397,7 +397,7 @@ if (isset($purchaseMessage)) {
             </ul>
         </div>
  
-        <!-- Movie selection form -->
+        
         <form method="post">
             <div class="movie-selection">
                 <div class="form-group">
@@ -421,7 +421,7 @@ if (isset($purchaseMessage)) {
                 <div class="form-group">
                     <label for="day">Day:</label>
                     <select name="day" id="day" required>
-                        <!-- Options will be populated dynamically -->
+                        
                     </select>
                     <div id="dayMessage" class="message" style="display: none;">No options available.</div>
                 </div>
@@ -429,7 +429,7 @@ if (isset($purchaseMessage)) {
                 <div class="form-group">
                     <label for="time">Time:</label>
                     <select name="time" id="time" required>
-                        <!-- Options will be populated dynamically -->
+                        
                     </select>
                     <div id="timeMessage" class="message" style="display: none;">No options available.</div>
                 </div>
@@ -440,7 +440,7 @@ if (isset($purchaseMessage)) {
                 </div>
             </div>
  
-            <!-- Seat selection -->
+            
 <div class="seat-selection">
     <h3>Select Seats</h3>
     <div id="seatsContainer">
@@ -453,7 +453,7 @@ if (isset($purchaseMessage)) {
  
             <div class="summary" style="text-align: center;">
     <p>Total Price: $<span id="totalPrice"><?= number_format($totalPrice, 2) ?></span></p><br>
-                <!-- Добавяме формуляр за плащане с кредитна карта -->
+                
 <form id="paymentForm">
     <div class="payment-section" style="background: black; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); max-width: 400px; margin: auto;">
         <h3 style="text-align: center; color: red;">Please Enter Your Credit Card Details:</h3><br>
@@ -477,7 +477,7 @@ if (isset($purchaseMessage)) {
         </div>
     </div>
 
-    <!-- Submit button inside the form -->
+    
     <button type="submit" id="bookTicketsBtn" style="width: 100%; padding: 12px; background-color: red; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; margin-top: 15px;">
         Book Tickets
     </button>
@@ -488,17 +488,17 @@ if (isset($purchaseMessage)) {
         const today = new Date();
         const year = today.getFullYear();
         let month = today.getMonth() + 1;
-        month = month < 10 ? `0${month}` : month; // Ensure two-digit month format
+        month = month < 10 ? `0${month}` : month;
 
         const expiryInput = document.getElementById('expiryDate');
         expiryInput.setAttribute('min', `${year}-${month}`);
 
-        // Prevent users from selecting an expired date
+        
         expiryInput.addEventListener('input', function () {
             const [selectedYear, selectedMonth] = expiryInput.value.split('-').map(Number);
             if (selectedYear < year || (selectedYear === year && selectedMonth < month)) {
                 alert('You cannot select an expired date.');
-                expiryInput.value = `${year}-${month}`; // Reset to the minimum allowed date
+                expiryInput.value = `${year}-${month}`;
             }
         });
     });
@@ -510,13 +510,13 @@ if (isset($purchaseMessage)) {
         const cvv = document.getElementById('cvv').value.trim();
         const bookTicketsBtn = document.getElementById('bookTicketsBtn');
 
-        // Get current year and month
+        
         const today = new Date();
         const currentYear = today.getFullYear();
         const currentMonth = today.getMonth() + 1;
         const [year, month] = expiryDate ? expiryDate.split('-').map(Number) : [0, 0];
 
-        // Ensure expiry date is not in the past
+        
         const isExpiryValid = year > currentYear || (year === currentYear && month >= currentMonth);
 
         const isValid = cardName !== '' &&
@@ -524,13 +524,13 @@ if (isset($purchaseMessage)) {
                         expiryDate !== '' && isExpiryValid &&
                         /^\d{3}$/.test(cvv);
 
-        // Change button color based on validation
+        
         if (isValid) {
             bookTicketsBtn.disabled = false;
-            bookTicketsBtn.style.backgroundColor = '#28a745'; // Green when valid
+            bookTicketsBtn.style.backgroundColor = '#28a745';
         } else {
             bookTicketsBtn.disabled = true;
-            bookTicketsBtn.style.backgroundColor = 'red'; // Red when invalid
+            bookTicketsBtn.style.backgroundColor = 'red';
         }
 
         return isValid;
@@ -542,7 +542,7 @@ if (isset($purchaseMessage)) {
 
     document.getElementById('paymentForm').addEventListener('submit', function(event) {
         if (!validatePaymentForm()) {
-            event.preventDefault(); // Prevent form submission
+            event.preventDefault();
             alert('Please fill in all payment details before booking tickets.');
         }
     });
@@ -644,7 +644,7 @@ function updateTimeOptions() {
     }
 }
  
-// Event listeners for dropdown updates
+
 document.getElementById('city').addEventListener('change', () => {
     updateDayOptions();
     refreshSeats();
@@ -693,22 +693,22 @@ function calculateTotalPrice() {
             const pricePerTicket = moviePrices[selectedMovie] || 0;
             const totalPrice = pricePerTicket * ticketCount;
  
-            // Update total price display
+            
             totalPriceDisplay.textContent = totalPrice.toFixed(2);
         }
  
-        // Setup listeners for initial total price calculation
+        
         document.getElementById('movie').addEventListener('change', calculateTotalPrice);
         document.getElementById('tickets').addEventListener('change', calculateTotalPrice);
  
-        // Initial calculation when the page loads
+        
         calculateTotalPrice();
     </script>
  
     <<script>
-    // Show purchase message after the form is submitted
+    
     window.addEventListener('load', function() {
-        // Check if purchaseMessage variable is set
+        
         <?php if (isset($purchaseMessage)): ?>
             alert("<?= $purchaseMessage ?> This information has been saved in the database.");
         <?php endif; ?>

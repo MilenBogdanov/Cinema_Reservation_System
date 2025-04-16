@@ -1,92 +1,91 @@
-/* General Body Styling */
+
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #cc0811; /* Darker red background */
-    background-image: url('images/cinemaIndex.jpg'); /* Path to your background image */
+    background-color: #cc0811;
+    background-image: url('images/cinemaIndex.jpg');
     background-size: cover;
     background-position: center;
-    backdrop-filter: blur(3px); /* Blur effect for the background */
-    min-height: 100vh;  /* Ensure the body covers the full height */
+    backdrop-filter: blur(3px);
+    min-height: 100vh;
 }
 
-/* Overlay for a subtle background effect */
 .overlay {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.6); /* Dark overlay with transparency */
-    z-index: -1; /* Behind the registration container */
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
 }
 
-/* Container for Registration Page */
+
 .registration-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 40vh;
-    background-color: rgba(27, 27, 27, 0.9); /* Slight transparency */
-    padding: 25px; /* Adjusted padding */
+    background-color: rgba(27, 27, 27, 0.9);
+    padding: 25px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     color: #ffffff;
-    width: 500px; /* Increased width for a wider box */
+    width: 500px;
     margin: auto;
     text-align: center;
     margin-top: 0px;
 }
 
-/* Title Styling */
+
 .registration-container h1 {
-    font-size: 32px; /* Adjusted font size */
+    font-size: 32px;
     margin-bottom: 25px;
     margin-top: 30px;
     color: #ffffff;
 }
 
-/* Input Field Styling */
+
 .registration-container input {
-    width: 90%; /* Full width of the container */
-    padding: 15px; /* Increased padding for larger input area */
-    margin-bottom: 20px; /* Space between inputs */
+    width: 90%;
+    padding: 15px;
+    margin-bottom: 20px;
     border: none;
     border-radius: 5px;
-    font-size: 16px; /* Increased font size */
+    font-size: 16px;
     background-color: #f0f0f0;
     color: #000;
 }
 
-/* Checkbox and Label Styling */
+
 .checkbox-container {
     display: flex;
-    align-items: center; /* Vertically center checkbox and label */
-    justify-content: flex-start; /* Left align the checkbox and label */
-    width: 90%; /* Match the width of input fields */
-    margin-bottom: 20px; /* Space below the checkbox */
+    align-items: center;
+    justify-content: flex-start;
+    width: 90%;
+    margin-bottom: 20px;
 }
 
-/* Checkbox Label */
+
 .checkbox-container label {
     font-size: 14px;
     color: #ffffff;
-    margin-left: 5px; /* Space between checkbox and label */
-    line-height: 1; /* Tighter alignment */
-    margin-top: -14px; /* Adjust vertical alignment */
+    margin-left: 5px;
+    line-height: 1;
+    margin-top: -14px;
 }
 
-/* Checkbox */
+
 .checkbox-container input[type="checkbox"] {
-    margin-right: 10px; /* Space between checkbox and label */
-    width: 20px; /* Adjust checkbox size */
-    height: 20px; /* Adjust checkbox size */
-    vertical-align: middle; /* Center checkbox vertically */
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
 }
 
-/* Button Styling */
+
 .registration-container button {
     width: 100%;
     padding: 14px;
@@ -102,13 +101,13 @@ body {
     background-color: #d40813;
 }
 
-/* Button Focus State for Accessibility */
+
 .registration-container button:focus {
     outline: 2px solid #ffffff;
     outline-offset: 2px;
 }
 
-/* Error and Success Messages */
+
 .error-messages {
     background-color: #ff4d4d;
     color: white;
@@ -127,7 +126,7 @@ body {
     text-align: center;
 }
 
-/* Modal and Popup Help */
+
 .modal {
     display: none;
     position: fixed;
@@ -137,7 +136,7 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay with transparency */
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-content {
@@ -149,11 +148,11 @@ body {
     width: 50%;
 }
 
-/* Additional Modal Styling */
+
 .modal-content ul {
-    list-style-type: none; /* Remove bullets */
-    padding: 0; /* Remove padding */
-    margin: 0; /* Remove margin */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 .close {
@@ -168,55 +167,55 @@ body {
     cursor: pointer;
 }
 
-/* Styling for all links */
+
 a {
-    color: #e50914; /* Netflix red */
-    text-decoration: none; /* Remove underline if not needed */
+    color: #e50914;
+    text-decoration: none;
 }
 
 a:hover {
-    color: #d40813; /* Slightly darker red for hover effect */
-    text-decoration: underline; /* Optional: Add underline on hover for emphasis */
+    color: #d40813;
+    text-decoration: underline;
 }
 
-/* Ensuring visited links retain the same color */
+
 a:visited {
     color: #e50914;
 }
 
-/* Media Query for Mobile Responsiveness */
+
 @media (max-width: 600px) {
     .registration-container {
-        width: 90%; /* Responsive width */
-        padding: 20px; /* Responsive padding */
+        width: 90%;
+        padding: 20px;
     }
 
     .registration-container h1 {
-        font-size: 28px; /* Responsive font size */
+        font-size: 28px;
     }
 
     .registration-container input {
-        font-size: 14px; /* Adjust input field font size */
-        padding: 12px; /* Adjust input field padding */
+        font-size: 14px;
+        padding: 12px;
     }
 
     .registration-container button {
-        font-size: 16px; /* Responsive button font size */
-        padding: 12px; /* Adjust button padding */
+        font-size: 16px;
+        padding: 12px;
     }
 
     .modal-content {
-        width: 80%; /* Adjust modal width on mobile */
+        width: 80%;
     }
 }
 
-/* Additional Media Query for Tablets */
+
 @media (max-width: 800px) {
     .registration-container {
-        width: 80%; /* Tablet width */
+        width: 80%;
     }
     
     .registration-container h1 {
-        font-size: 30px; /* Slightly smaller title for tablets */
+        font-size: 30px;
     }
 }

@@ -30,7 +30,7 @@ if ($conn->connect_error) {
 </head>
 <body>
 
-<!-- Navbar -->
+
 <div class="navbar-container">
     <div class="navbar">
         <a href="main.php">
@@ -68,7 +68,7 @@ if ($conn->connect_error) {
         <input type="text" name="query" id="searchInput" placeholder="Search for a movie..." required oninput="getSuggestions()">
         <button type="submit">Search</button>
     </form>
-    <div id="suggestions" class="suggestions-container"></div> <!-- Suggestions container -->
+    <div id="suggestions" class="suggestions-container"></div>
 </div>
 
 <div class="slider-container">
@@ -235,7 +235,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (selectedIndex >= 0 && suggestionItems.length > 0) {
                 selectSuggestion(suggestionItems[selectedIndex].textContent);
             } else {
-                document.querySelector(".search-container form").submit(); // Submit if no selection
+                document.querySelector(".search-container form").submit();
             }
         }
     });
@@ -280,8 +280,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function selectSuggestion(title) {
     document.getElementById("searchInput").value = title;
-    document.getElementById("suggestions").innerHTML = ""; // Clear suggestions
-    document.querySelector(".search-container form").submit(); // Submit the form
+    document.getElementById("suggestions").innerHTML = "";
+    document.querySelector(".search-container form").submit();
 }
 </script>
 </body>

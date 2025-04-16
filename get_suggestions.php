@@ -1,5 +1,4 @@
 <?php
-// Include database connection
 $conn = new mysqli('localhost', 'root', '', 'registration');
 
 if ($conn->connect_error) {
@@ -9,7 +8,6 @@ if ($conn->connect_error) {
 $query = isset($_GET['query']) ? $conn->real_escape_string($_GET['query']) : '';
 
 if ($query != '') {
-    // Query to search both 'now_playing' and 'coming_soon' tables
     $sql = "
         SELECT title, genre FROM now_playing 
         WHERE title LIKE '%$query%' OR genre LIKE '%$query%'

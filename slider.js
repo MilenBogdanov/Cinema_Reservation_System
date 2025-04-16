@@ -1,48 +1,48 @@
-let currentSlide = 0; // Track the current slide index
-const slides = document.querySelectorAll('.slide'); // All slides
-const totalSlides = slides.length; // Total number of slides
-const slider = document.querySelector('.slider'); // Cache the slider element
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
+const slider = document.querySelector('.slider');
 
-// Auto-slide interval ID
-let slideInterval = setInterval(() => changeSlide(1), 5000); // Change slides every 5 seconds
+
+let slideInterval = setInterval(() => changeSlide(1), 5000);
 
 function changeSlide(direction) {
-    // Update the current slide index
+    
     currentSlide += direction;
 
-    // Wrap around when going out of bounds
+    
     if (currentSlide >= totalSlides) {
         currentSlide = 0;
     } else if (currentSlide < 0) {
         currentSlide = totalSlides - 1;
     }
 
-    // Calculate the transform value for sliding
+    
     const transformValue = `translateX(-${currentSlide * 100}%)`;
 
-    // Apply the transform to the slider
+    
     slider.style.transform = transformValue;
 
-    // Reset auto-slide when manually changed
+    
     resetSlideInterval();
 }
 
-// Keyboard Navigation
+
 document.addEventListener('keydown', (event) => {
     if (event.key === 'ArrowRight') {
-        changeSlide(1); // Next slide
+        changeSlide(1);
     } else if (event.key === 'ArrowLeft') {
-        changeSlide(-1); // Previous slide
+        changeSlide(-1);
     }
 });
 
-// Auto-slide feature with interval reset
+
 function resetSlideInterval() {
-    clearInterval(slideInterval); // Clear existing interval
-    slideInterval = setInterval(() => changeSlide(1), 7000); // Start new interval
+    clearInterval(slideInterval);
+    slideInterval = setInterval(() => changeSlide(1), 7000);
 }
 
-// Clear interval when the page is unloaded (prevent memory leaks)
+
 window.addEventListener('beforeunload', () => clearInterval(slideInterval));
 
 function openModal(title, image, description, duration, genre, releaseDate) {
@@ -60,7 +60,7 @@ function closeModal() {
     document.getElementById('movieModal').style.display = "none";
 }
 
-// Close modal when clicking outside of it
+
 window.onclick = function(event) {
     const modal = document.getElementById('movieModal');
     if (event.target === modal) {
