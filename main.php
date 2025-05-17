@@ -5,7 +5,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     header('Location: index.php');
     exit;
 }
-
+    
 if (isset($_POST['logout'])) {
     session_unset();
     session_destroy();
@@ -55,6 +55,10 @@ if ($conn->connect_error) {
     <?php if (isset($_SESSION['email']) && $_SESSION['email'] === 'adminCinemaIsland@gmail.com'): ?>
         <a href="admin.php" class="admin-button">Edit Movies</a>
     <?php endif; ?>
+        
+        <?php if (isset($_SESSION['email']) && $_SESSION['email'] !== 'adminCinemaIsland@gmail.com'): ?>
+    <a href="bookings.php">My Bookings</a>
+<?php endif; ?>
         </div>
         <form method="post" class="logout">
             <button type="submit" name="logout">Logout</button>
